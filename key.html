@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Generated Key</title>
+  <title>Generated Key</title>
 </head>
 <body>
-    <h1>Generated Key:</h1>
-    <p id="Key">Generating...</p>
-    <script>
-    var filename = "list.txt"
+  <h1>Generated Key:</h1>
+  <p id="Key">Generating...</p>
+  <script>
+    var filename = "list.txt";
+
     function Gen() {
-    return fetch(filename)
-    .then(response => response.text())
-    .then(data => {
-    const lines = data.split('\n');
-    const randomIndex = Math.floor(Math.random() * lines.length);
-    return lines[randomIndex].trim();
-            }
-        )
+      return fetch(filename)
+        .then(response => response.text())
+        .then(data => {
+          const lines = data.split('\n');
+          const randomIndex = Math.floor(Math.random() * lines.length);
+          return lines[randomIndex].trim();
+        });
     }
-    var GeneratedKey = Gen()
-    document.getElementById("Key").innerText = GeneratedKey;
-    </script>
+
+    Gen()
+      .then(generatedKey => {
+        document.getElementById("Key").innerText = generatedKey;
+      });
+  </script>
 </body>
 </html>
