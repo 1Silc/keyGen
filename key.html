@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>Generated Key:</h1>
+    <p id="Key">Generating...</p>
     <script>
     var filename = "list.txt"
     function Gen() {
@@ -18,8 +19,7 @@
         )
     }
     var GeneratedKey = Gen()
-    document.getElementById("Key").innerText = "Gay";
+    document.getElementById("Key").innerText = GeneratedKey;
     </script>
-    <p id="Key">Generating...</p>
 </body>
 </html>
