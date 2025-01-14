@@ -13,8 +13,10 @@
     const lines = data.split('\n');
     const randomIndex = Math.floor(Math.random() * lines.length);
     return lines[randomIndex].trim();
-    )}};
-    document.getElementById("Key").innerText = Gen()
+            )
+        }
+    }
+    document.getElementById("Key").innerText = Gen();
     </script>
     <p id="Key">Generating...</p>
 </body>
